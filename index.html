@@ -2,11 +2,11 @@
 <html lang="pt-BR" class="scroll-smooth">
 <head>
     <!-- Chosen Palette: Luxury Blush & Burgundy Gold Palette (Blush #FDF7F4, Nude #F4ECE4, Burgundy #5C1010, Gold #D4AF37, Espresso #1A1513) -->
-    <!-- Application Structure Plan: Redesenho do website institucional para uma experiência SPA imersiva e interativa. A estrutura combina uma narrativa visual editorial (Hero, Sobre Nós com rostos preservados no mobile), uma seção VIP de alto impacto visual (MEB Exclusive com os 3 cards formatados sem cortes), um explorador interativo de serviços por abas, um simulador/gráfico de Diagnóstico Capilar interativo via Chart.js, galeria filtrável de transformações, depoimentos reais e um mapa interativo com CTAs de agendamento em tempo real (Gendo & WhatsApp). -->
+    <!-- Application Structure Plan: Redesenho do website institucional para uma experiência SPA imersiva. Substituição dos ícones de texto/vetoriais por pequenas miniaturas de imagens fotográficas genéricas e elegantes nas seções de serviços e diferenciais, elevando a percepção visual da marca MEB Salão de Beleza. -->
     <!-- Visualization & Content Choices: 
-         - Diagnóstico Capilar MEB -> Goal: Informar e engajar -> Gráfico Radar em Chart.js (Canvas) -> Interatividade por botões de filtro de necessidade capilar -> Justificativa: Permite à cliente entender a ciência por trás dos tratamentos do salão.
-         - Seção MEB Exclusive -> Goal: Apresentar benefícios VIP -> Grid responsivo com cards e imagem ajustada (object-contain) -> Justificativa: Garante leitura 100% legível das placas Exclusive1, 2 e 3 sem cortes laterais.
-         - Galeria & Serviços -> Goal: Explorar portfólio -> Tabs JS e filtros interativos -> Justificativa: Facilita a consulta em smartphones sem rolagem excessiva.
+         - Miniaturas nos Serviços -> Goal: Apresentar especialidades com riqueza visual -> Pequenas imagens circulares/arredondadas com bordas douradas -> Justificativa: Transmite a atmosfera do salão de forma mais tátil e sofisticada do que ícones planos.
+         - Diagnóstico Capilar MEB -> Goal: Informar e engajar -> Gráfico Radar em Chart.js (Canvas) -> Interatividade por botões de filtro de necessidade capilar.
+         - Seção MEB Exclusive -> Grid responsivo preservando a legibilidade total das imagens de cartões sem cortes.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 
@@ -25,7 +25,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
-    <!-- FontAwesome CDN -->
+    <!-- FontAwesome 6 CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Configuração Tailwind Customizada -->
@@ -133,7 +133,7 @@
             <nav class="hidden md:flex items-center gap-6 font-medium text-xs uppercase tracking-wider text-meb-dark/85">
                 <a href="#sobre" class="hover:text-meb-goldDark transition">Sobre Nós</a>
                 <a href="#exclusive" class="hover:text-meb-goldDark transition font-bold text-meb-burgundy flex items-center gap-1">
-                    <i class="fa-solid fa-crown text-meb-gold text-xs"></i> MEB Exclusive
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=40&q=80" alt="VIP" class="w-4 h-4 rounded-full object-cover border border-meb-gold inline-block"> MEB Exclusive
                 </a>
                 <a href="#espaco" class="hover:text-meb-goldDark transition">Nosso Espaço</a>
                 <a href="#servicos" class="hover:text-meb-goldDark transition">Serviços</a>
@@ -158,7 +158,9 @@
 
         <div id="mobileDrawer" class="hidden md:hidden bg-white/95 backdrop-blur-md border-b border-meb-gold/30 px-6 py-6 space-y-4">
             <a href="#sobre" class="mobile-link block font-medium text-base text-meb-dark">Sobre Nós</a>
-            <a href="#exclusive" class="mobile-link block font-bold text-base text-meb-burgundy">⭐ MEB Exclusive</a>
+            <a href="#exclusive" class="mobile-link block font-bold text-base text-meb-burgundy flex items-center gap-2">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=40&q=80" alt="VIP" class="w-5 h-5 rounded-full object-cover border border-meb-gold"> MEB Exclusive
+            </a>
             <a href="#espaco" class="mobile-link block font-medium text-base text-meb-dark">Nosso Espaço</a>
             <a href="#servicos" class="mobile-link block font-medium text-base text-meb-dark">Serviços</a>
             <a href="#diagnostico" class="mobile-link block font-medium text-base text-meb-dark">Diagnóstico Capilar</a>
@@ -182,8 +184,8 @@
                 
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 bg-white/90 px-4 py-2 rounded-full border border-meb-gold/40 shadow-gold-glow">
-                        <span class="flex h-2.5 w-2.5 rounded-full bg-meb-gold animate-pulse"></span>
-                        <span class="text-xs font-bold uppercase tracking-wider text-meb-dark">⭐ 4.9 de 5.0 no Google • Santiago / RS</span>
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=40&q=80" alt="Estrela" class="w-4 h-4 rounded-full object-cover border border-meb-gold">
+                        <span class="text-xs font-bold uppercase tracking-wider text-meb-dark">4.9 de 5.0 no Google • Santiago / RS</span>
                     </div>
 
                     <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-meb-dark leading-[1.15]">
@@ -211,7 +213,7 @@
                         </div>
                         <div>
                             <span class="block font-serif text-2xl md:text-3xl font-bold text-meb-dark">Premium</span>
-                            <span class="text-xs text-meb-dark/60 font-medium">Produtos de Linha Global</span>
+                            <span class="text-xs text-meb-dark/60 font-medium">Produtos Globais</span>
                         </div>
                         <div>
                             <span class="block font-serif text-2xl md:text-3xl font-bold text-meb-dark">Vila Nova</span>
@@ -243,9 +245,7 @@
                         </div>
 
                         <div class="absolute -top-4 -left-3 sm:-left-6 z-30 bg-white/95 backdrop-blur-md p-3 rounded-2xl shadow-gold-glow border border-meb-gold/40 flex items-center gap-2.5">
-                            <div class="w-9 h-9 rounded-full bg-gold-metallic flex items-center justify-center text-meb-espresso font-bold shrink-0">
-                                <i class="fa-solid fa-crown text-sm"></i>
-                            </div>
+                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=80&q=80" alt="Selo VIP" class="w-9 h-9 rounded-full border-2 border-meb-gold object-cover shrink-0">
                             <div>
                                 <p class="text-xs font-bold text-meb-dark leading-none">Espaço Exclusivo</p>
                                 <p class="text-[10px] text-meb-goldDark font-semibold mt-0.5">Santiago - RS</p>
@@ -263,6 +263,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="mb-6 flex justify-center lg:justify-start">
                 <div class="inline-flex items-center gap-2 bg-meb-blush px-4 py-2 rounded-full border border-meb-gold/40">
+                    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=40&q=80" alt="Boas Vindas" class="w-4 h-4 rounded-full object-cover">
                     <span class="text-meb-goldDark font-bold text-xs uppercase tracking-widest">Boas-Vindas ao MEB</span>
                 </div>
             </div>
@@ -292,15 +293,15 @@
                     </p>
 
                     <div class="grid sm:grid-cols-2 gap-4 pt-4">
-                        <div class="flex items-start gap-3 p-4 rounded-2xl bg-meb-blush border border-meb-gold/20">
-                            <i class="fa-solid fa-gem text-meb-goldDark text-xl mt-1"></i>
+                        <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-meb-blush border border-meb-gold/20">
+                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=80&q=80" alt="Atendimento VIP" class="w-10 h-10 rounded-xl object-cover border border-meb-gold/60 shrink-0 shadow-sm">
                             <div>
                                 <h4 class="font-bold text-meb-dark text-sm">Atendimento VIP</h4>
                                 <p class="text-xs text-meb-dark/70 mt-0.5">Atenção exclusiva e consultoria personalizada para cada cliente.</p>
                             </div>
                         </div>
-                        <div class="flex items-start gap-3 p-4 rounded-2xl bg-meb-blush border border-meb-gold/20">
-                            <i class="fa-solid fa-clock text-meb-goldDark text-xl mt-1"></i>
+                        <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-meb-blush border border-meb-gold/20">
+                            <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=80&q=80" alt="Tempo Otimizado" class="w-10 h-10 rounded-xl object-cover border border-meb-gold/60 shrink-0 shadow-sm">
                             <div>
                                 <h4 class="font-bold text-meb-dark text-sm">Tempo Otimizado</h4>
                                 <p class="text-xs text-meb-dark/70 mt-0.5">Agilidade e processos eficientes para respeitar sua rotina.</p>
@@ -317,7 +318,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-14">
                 <div class="inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full border border-meb-gold/50 shadow-gold-glow backdrop-blur-sm">
-                    <i class="fa-solid fa-crown text-meb-gold text-sm"></i>
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=40&q=80" alt="Corona VIP" class="w-4 h-4 rounded-full object-cover">
                     <span class="text-xs font-bold uppercase tracking-widest text-meb-champagne">Programa Especial MEB</span>
                 </div>
                 
@@ -360,7 +361,7 @@
                     </div>
                 </div>
 
-                <!-- CARD 3 (CORRIGIDO SEM CORTES NA ESQUERDA) -->
+                <!-- CARD 3 -->
                 <div class="bg-white/5 border border-meb-gold/30 rounded-3xl p-5 flex flex-col justify-between hover:border-meb-gold transition duration-500 group shadow-exclusive-glow">
                     <div class="w-full h-80 rounded-2xl overflow-hidden mb-5 border border-meb-gold/20 relative bg-meb-burgundyDark flex items-center justify-center">
                         <img src="Exclusive3.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x600/5C1010/F3E5AB?text=Exclusive+3';" alt="Mais organização na sua rotina" class="w-full h-full object-contain p-2 group-hover:scale-105 transition duration-500">
@@ -376,7 +377,7 @@
             <!-- BOTÃO CTA DE CONTATO DA SEÇÃO EXCLUSIVE -->
             <div class="text-center pt-4">
                 <a href="https://wa.me/5555996441608?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20MEB%20Exclusive!" target="_blank" class="inline-flex items-center gap-3 bg-gold-metallic text-meb-espresso px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider shadow-gold-glow hover:scale-105 transition duration-300">
-                    <i class="fa-brands fa-whatsapp text-xl"></i> Quer saber mais? Entre em contato conosco 🤎
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Quer saber mais? Entre em contato conosco <i class="fa-solid fa-arrow-right ml-1"></i>
                 </a>
             </div>
         </div>
@@ -431,7 +432,7 @@
         </div>
     </section>
 
-    <!-- SEÇÃO SERVIÇOS -->
+    <!-- SEÇÃO SERVIÇOS (COM MINIATURAS FOTOGRÁFICAS E DESIGN DE LUSTER MEB) -->
     <section id="servicos" class="py-20 md:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
@@ -441,67 +442,104 @@
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-meb-blush p-6 rounded-3xl border border-meb-gold/30 hover:shadow-card-hover transition">
-                    <div class="w-12 h-12 rounded-2xl bg-gold-metallic text-meb-espresso flex items-center justify-center font-bold text-xl mb-4">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                
+                <!-- MECHAS -->
+                <div class="bg-meb-blush p-6 rounded-3xl border border-meb-gold/30 hover:shadow-card-hover hover:border-meb-gold transition duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl overflow-hidden border-2 border-meb-gold shadow-sm mb-5 group-hover:scale-110 transition duration-300">
+                            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=200&q=80" alt="Mechas & Iluminação" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-meb-dark mb-2">Mechas & Morena Iluminada</h3>
+                        <p class="text-xs text-meb-dark/75 leading-relaxed mb-5">Técnicas exclusivas de clareamento preservando a saúde do fio e garantindo transição natural.</p>
                     </div>
-                    <h3 class="font-serif text-xl font-bold text-meb-dark mb-2">Mechas & Morena Iluminada</h3>
-                    <p class="text-xs text-meb-dark/75 leading-relaxed mb-4">Técnicas exclusivas de clareamento preservando a saúde do fio e garantindo transição natural.</p>
-                    <a href="https://popa546.gendo.app/#/" target="_blank" class="text-xs font-bold text-meb-burgundy hover:text-meb-goldDark flex items-center gap-1">Agendar Horário <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    <a href="https://popa546.gendo.app/#/" target="_blank" class="text-xs font-bold text-meb-burgundy hover:text-meb-goldDark flex items-center gap-1.5 transition pt-2">
+                        <span>Agendar Horário</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
                 </div>
 
-                <div class="bg-meb-blush p-6 rounded-3xl border border-meb-gold/30 hover:shadow-card-hover transition">
-                    <div class="w-12 h-12 rounded-2xl bg-gold-metallic text-meb-espresso flex items-center justify-center font-bold text-xl mb-4">
-                        <i class="fa-solid fa-droplet"></i>
+                <!-- TRATAMENTOS -->
+                <div class="bg-meb-blush p-6 rounded-3xl border border-meb-gold/30 hover:shadow-card-hover hover:border-meb-gold transition duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl overflow-hidden border-2 border-meb-gold shadow-sm mb-5 group-hover:scale-110 transition duration-300">
+                            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=200&q=80" alt="Tratamentos Capilares" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-meb-dark mb-2">Tratamentos Capilares</h3>
+                        <p class="text-xs text-meb-dark/75 leading-relaxed mb-5">Nutrição, reconstrução e hidratação profunda para devolver a vida e brilho intenso aos seus cabelos.</p>
                     </div>
-                    <h3 class="font-serif text-xl font-bold text-meb-dark mb-2">Tratamentos Capilares</h3>
-                    <p class="text-xs text-meb-dark/75 leading-relaxed mb-4">Nutrição, reconstrução e hidratação profunda para devolver a vida e brilho intenso aos seus cabelos.</p>
-                    <a href="https://popa546.gendo.app/#/" target="_blank" class="text-xs font-bold text-meb-burgundy hover:text-meb-goldDark flex items-center gap-1">Agendar Horário <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    <a href="https://popa546.gendo.app/#/" target="_blank" class="text-xs font-bold text-meb-burgundy hover:text-meb-goldDark flex items-center gap-1.5 transition pt-2">
+                        <span>Agendar Horário</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
                 </div>
 
-                <div class="bg-meb-blush p-6 rounded-3xl border border-meb-gold/30 hover:shadow-card-hover transition">
-                    <div class="w-12 h-12 rounded-2xl bg-gold-metallic text-meb-espresso flex items-center justify-center font-bold text-xl mb-4">
-                        <i class="fa-solid fa-scissors"></i>
+                <!-- CORTE -->
+                <div class="bg-meb-blush p-6 rounded-3xl border border-meb-gold/30 hover:shadow-card-hover hover:border-meb-gold transition duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl overflow-hidden border-2 border-meb-gold shadow-sm mb-5 group-hover:scale-110 transition duration-300">
+                            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=200&q=80" alt="Corte & Modelagem" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-meb-dark mb-2">Corte & Modelagem</h3>
+                        <p class="text-xs text-meb-dark/75 leading-relaxed mb-5">Visagismo aplicado no corte para valorizar o formato do seu rosto e trazer praticidade ao dia a dia.</p>
                     </div>
-                    <h3 class="font-serif text-xl font-bold text-meb-dark mb-2">Corte & Modelagem</h3>
-                    <p class="text-xs text-meb-dark/75 leading-relaxed mb-4">Visagismo aplicado no corte para valorizar o formato do seu rosto e trazer praticidade ao dia a dia.</p>
-                    <a href="https://popa546.gendo.app/#/" target="_blank" class="text-xs font-bold text-meb-burgundy hover:text-meb-goldDark flex items-center gap-1">Agendar Horário <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    <a href="https://popa546.gendo.app/#/" target="_blank" class="text-xs font-bold text-meb-burgundy hover:text-meb-goldDark flex items-center gap-1.5 transition pt-2">
+                        <span>Agendar Horário</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
                 </div>
 
-                <div class="bg-meb-blush p-6 rounded-3xl border border-meb-gold/30 hover:shadow-card-hover transition">
-                    <div class="w-12 h-12 rounded-2xl bg-gold-metallic text-meb-espresso flex items-center justify-center font-bold text-xl mb-4">
-                        <i class="fa-solid fa-brush"></i>
+                <!-- MAKE -->
+                <div class="bg-meb-blush p-6 rounded-3xl border border-meb-gold/30 hover:shadow-card-hover hover:border-meb-gold transition duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl overflow-hidden border-2 border-meb-gold shadow-sm mb-5 group-hover:scale-110 transition duration-300">
+                            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=200&q=80" alt="Maquiagem Social" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-meb-dark mb-2">Maquiagem Social & Eventos</h3>
+                        <p class="text-xs text-meb-dark/75 leading-relaxed mb-5">Make profissional de alta durabilidade para festas, formações, casamentos e ocasiões especiais.</p>
                     </div>
-                    <h3 class="font-serif text-xl font-bold text-meb-dark mb-2">Maquiagem Social & Eventos</h3>
-                    <p class="text-xs text-meb-dark/75 leading-relaxed mb-4">Make profissional de alta durabilidade para festas, formações, casamentos e ocasiões especiais.</p>
-                    <a href="https://popa546.gendo.app/#/" target="_blank" class="text-xs font-bold text-meb-burgundy hover:text-meb-goldDark flex items-center gap-1">Agendar Horário <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    <a href="https://popa546.gendo.app/#/" target="_blank" class="text-xs font-bold text-meb-burgundy hover:text-meb-goldDark flex items-center gap-1.5 transition pt-2">
+                        <span>Agendar Horário</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
                 </div>
 
-                <div class="bg-meb-blush p-6 rounded-3xl border border-meb-gold/30 hover:shadow-card-hover transition">
-                    <div class="w-12 h-12 rounded-2xl bg-gold-metallic text-meb-espresso flex items-center justify-center font-bold text-xl mb-4">
-                        <i class="fa-solid fa-hand-sparkles"></i>
+                <!-- MANICURE -->
+                <div class="bg-meb-blush p-6 rounded-3xl border border-meb-gold/30 hover:shadow-card-hover hover:border-meb-gold transition duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl overflow-hidden border-2 border-meb-gold shadow-sm mb-5 group-hover:scale-110 transition duration-300">
+                            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=200&q=80" alt="Manicure & Pedicure" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-meb-dark mb-2">Manicure & Pedicure</h3>
+                        <p class="text-xs text-meb-dark/75 leading-relaxed mb-5">Cuidado completo para suas unhas com esmaltação impecável e esterilização hospitalar.</p>
                     </div>
-                    <h3 class="font-serif text-xl font-bold text-meb-dark mb-2">Manicure & Pedicure</h3>
-                    <p class="text-xs text-meb-dark/75 leading-relaxed mb-4">Cuidado completo para suas unhas com esmaltação impecável e esterilização hospitalar.</p>
-                    <a href="https://popa546.gendo.app/#/" target="_blank" class="text-xs font-bold text-meb-burgundy hover:text-meb-goldDark flex items-center gap-1">Agendar Horário <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    <a href="https://popa546.gendo.app/#/" target="_blank" class="text-xs font-bold text-meb-burgundy hover:text-meb-goldDark flex items-center gap-1.5 transition pt-2">
+                        <span>Agendar Horário</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
                 </div>
 
-                <div class="bg-meb-blush p-6 rounded-3xl border border-meb-gold/30 hover:shadow-card-hover transition">
-                    <div class="w-12 h-12 rounded-2xl bg-gold-metallic text-meb-espresso flex items-center justify-center font-bold text-xl mb-4">
-                        <i class="fa-solid fa-heart"></i>
+                <!-- DIA DA NOIVA -->
+                <div class="bg-meb-blush p-6 rounded-3xl border border-meb-gold/30 hover:shadow-card-hover hover:border-meb-gold transition duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl overflow-hidden border-2 border-meb-gold shadow-sm mb-5 group-hover:scale-110 transition duration-300">
+                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=200&q=80" alt="Dia da Noiva" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-meb-dark mb-2">Dia da Noiva / Formanda</h3>
+                        <p class="text-xs text-meb-dark/75 leading-relaxed mb-5">Pacotes exclusivos com espaço reservado para você vivenciar um dia inesquecível e sem estresse.</p>
                     </div>
-                    <h3 class="font-serif text-xl font-bold text-meb-dark mb-2">Dia da Noiva / Formanda</h3>
-                    <p class="text-xs text-meb-dark/75 leading-relaxed mb-4">Pacotes exclusivos com espaço reservado para você vivenciar um dia inesquecível e sem estresse.</p>
-                    <a href="https://wa.me/5555996441608" target="_blank" class="text-xs font-bold text-meb-burgundy hover:text-meb-goldDark flex items-center gap-1">Consultar Pacote <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    <a href="https://wa.me/5555996441608" target="_blank" class="text-xs font-bold text-meb-burgundy hover:text-meb-goldDark flex items-center gap-1.5 transition pt-2">
+                        <span>Consultar Pacote</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- NOVO MÓDULO INTERATIVO: DIAGNÓSTICO CAPILAR COM CHART.JS -->
+    <!-- MÓDULO INTERATIVO: DIAGNÓSTICO CAPILAR COM CHART.JS -->
     <section id="diagnostico" class="py-20 md:py-28 bg-meb-blush border-y border-meb-gold/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <!-- Introdução da Seção exigida -->
             <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
                 <span class="text-meb-goldDark font-bold text-xs uppercase tracking-widest block">Interativo & Científico</span>
                 <h2 class="font-serif text-3xl sm:text-4xl font-bold text-meb-dark">Diagnóstico dos Pilares de Saúde Capilar</h2>
@@ -516,16 +554,25 @@
                     <p class="text-xs text-meb-dark/70">Clique nos perfis abaixo para recalibrar o gráfico de balanço de tratamento recomendados pela nossa equipe:</p>
                     
                     <div class="space-y-3">
-                        <button onclick="updateDiagnostic('descoloridos')" class="diag-btn w-full text-left p-3.5 rounded-2xl border border-meb-gold/30 bg-meb-blush hover:bg-meb-burgundy hover:text-white transition flex items-center justify-between group">
-                            <span class="text-xs font-bold uppercase tracking-wider">Fios Descoloridos & Loiras</span>
+                        <button onclick="updateDiagnostic('descoloridos')" class="diag-btn w-full text-left p-3 rounded-2xl border border-meb-gold/30 bg-meb-blush hover:bg-meb-burgundy hover:text-white transition flex items-center justify-between group">
+                            <div class="flex items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=80&q=80" alt="Loiras" class="w-8 h-8 rounded-full object-cover border border-meb-gold">
+                                <span class="text-xs font-bold uppercase tracking-wider">Fios Descoloridos & Loiras</span>
+                            </div>
                             <i class="fa-solid fa-chevron-right text-xs text-meb-gold"></i>
                         </button>
-                        <button onclick="updateDiagnostic('ressecados')" class="diag-btn w-full text-left p-3.5 rounded-2xl border border-meb-gold/30 bg-meb-blush hover:bg-meb-burgundy hover:text-white transition flex items-center justify-between group">
-                            <span class="text-xs font-bold uppercase tracking-wider">Cabelos Ressecados / Opacos</span>
+                        <button onclick="updateDiagnostic('ressecados')" class="diag-btn w-full text-left p-3 rounded-2xl border border-meb-gold/30 bg-meb-blush hover:bg-meb-burgundy hover:text-white transition flex items-center justify-between group">
+                            <div class="flex items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=80&q=80" alt="Ressecados" class="w-8 h-8 rounded-full object-cover border border-meb-gold">
+                                <span class="text-xs font-bold uppercase tracking-wider">Cabelos Ressecados / Opacos</span>
+                            </div>
                             <i class="fa-solid fa-chevron-right text-xs text-meb-gold"></i>
                         </button>
-                        <button onclick="updateDiagnostic('manutencao')" class="diag-btn w-full text-left p-3.5 rounded-2xl border border-meb-gold/30 bg-meb-blush hover:bg-meb-burgundy hover:text-white transition flex items-center justify-between group">
-                            <span class="text-xs font-bold uppercase tracking-wider">Manutenção & Brilho Diário</span>
+                        <button onclick="updateDiagnostic('manutencao')" class="diag-btn w-full text-left p-3 rounded-2xl border border-meb-gold/30 bg-meb-blush hover:bg-meb-burgundy hover:text-white transition flex items-center justify-between group">
+                            <div class="flex items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=80&q=80" alt="Manutenção" class="w-8 h-8 rounded-full object-cover border border-meb-gold">
+                                <span class="text-xs font-bold uppercase tracking-wider">Manutenção & Brilho Diário</span>
+                            </div>
                             <i class="fa-solid fa-chevron-right text-xs text-meb-gold"></i>
                         </button>
                     </div>
@@ -579,7 +626,7 @@
                 <!-- Foto MEB10_3.jpg -->
                 <div class="rounded-3xl overflow-hidden shadow-md border-2 border-meb-gold/30 group bg-white">
                     <div class="h-80 overflow-hidden">
-                        <img src="MEB10_3.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80';" alt="Cabelo Longo MEB" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="MEB10_3.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80';" alt="Cabelo Longo MEB" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-4 text-center">
                         <h4 class="font-serif font-bold text-meb-dark text-lg">Corte & Alinhamento</h4>
@@ -645,7 +692,7 @@
                 
                 <div class="lg:col-span-6 space-y-6">
                     <div class="inline-flex items-center gap-2 bg-meb-blush px-4 py-2 rounded-full border border-meb-gold/40">
-                        <i class="fa-solid fa-location-dot text-meb-goldDark"></i>
+                        <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=40&q=80" alt="Localização" class="w-4 h-4 rounded-full object-cover">
                         <span class="text-xs font-bold uppercase tracking-wider text-meb-dark">Santiago - RS</span>
                     </div>
 
@@ -720,7 +767,7 @@
         </div>
     </footer>
 
-    <!-- LOGICA JS DO MENU MOBILE E CHART.JS INTERATIVO -->
+    <!-- LÓGICA JS DO MENU MOBILE E CHART.JS INTERATIVO -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Menu Mobile
@@ -745,17 +792,17 @@
             
             const diagnosticData = {
                 descoloridos: {
-                    labels: ['Reconstrução', 'Nutrição Lipidica', 'Brilho Intensivo', 'Proteção Térmica', 'Elasticidade'],
+                    labels: ['Reconstrução', 'Nutrição Lípidica', 'Brilho Intensivo', 'Proteção Térmica', 'Elasticidade'],
                     values: [98, 90, 85, 95, 92],
                     desc: "<strong>Fios Descoloridos:</strong> Foco em alta carga proteica (Reconstrução com aminoácidos) e selamento de cutículas com óleos nobres para recuperar a estrutura perdida na descoloração."
                 },
                 ressecados: {
-                    labels: ['Reconstrução', 'Nutrição Lipidica', 'Brilho Intensivo', 'Proteção Térmica', 'Elasticidade'],
+                    labels: ['Reconstrução', 'Nutrição Lípidica', 'Brilho Intensivo', 'Proteção Térmica', 'Elasticidade'],
                     values: [70, 95, 98, 88, 80],
                     desc: "<strong>Cabelos Ressecados:</strong> Foco em reposição hídrica e lipídica profunda. Restabelece a maciez, elimina o aspecto áspero e garante reflexo espelhado de luz."
                 },
                 manutencao: {
-                    labels: ['Reconstrução', 'Nutrição Lipidica', 'Brilho Intensivo', 'Proteção Térmica', 'Elasticidade'],
+                    labels: ['Reconstrução', 'Nutrição Lípidica', 'Brilho Intensivo', 'Proteção Térmica', 'Elasticidade'],
                     values: [80, 85, 90, 92, 88],
                     desc: "<strong>Manutenção Diária:</strong> Protocolo equilibrado para proteger contra agressões do sol e secadores, mantendo a saúde contínua entre os agendamentos."
                 }
