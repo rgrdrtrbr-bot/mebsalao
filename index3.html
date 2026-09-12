@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEB Salão de Beleza | Santiago - RS | Experiência & Autoestima</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Playfair Display + Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Configuração de Temas Tailwind Customizados -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        meb: {
+                            blush: '#FDF7F4',
+                            nude: '#F4ECE4',
+                            terracotta: '#D97760',
+                            warmRose: '#E8A598',
+                            gold: '#C5A059',
+                            dark: '#221C1A',
+                            espresso: '#1A1513',
+                            grayLight: '#F9F5F2'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft-glow': '0 20px 40px -15px rgba(217, 119, 96, 0.15)',
+                        'card-hover': '0 25px 50px -12px rgba(34, 28, 26, 0.12)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-nav {
+            background: rgba(253, 247, 244, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #221C1A 30%, #D97760 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #C5A059 0%, #D97760 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-hero-gradient {
+            background: radial-gradient(circle at 80% 20%, rgba(232, 165, 152, 0.25) 0%, rgba(253, 247, 244, 1) 70%);
+        }
+    </style>
+</head>
+<body class="font-sans text-meb-dark bg-meb-blush antialiased selection:bg-meb-terracotta selection:text-white">
+
+    <!-- NAVBAR FIXA -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-meb-warmRose/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+            <!-- Logo Marca com Detalhe Borboleta -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="relative w-11 h-11 rounded-full bg-white shadow-md border border-meb-warmRose/30 flex items-center justify-center overflow-hidden group-hover:scale-105 transition duration-300">
+                    <img src="MEB3_2.jpg" onerror="this.onerror=null; this.src='https://placehold.co/100x100/FDF7F4/D97760?text=MEB';" alt="Logo MEB Borboleta" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="font-serif text-2xl font-bold tracking-tight text-meb-dark block leading-none">MEB</span>
+                    <span class="text-[10px] tracking-widest text-meb-terracotta uppercase font-bold">Salão de Beleza</span>
+                </div>
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex items-center gap-7 font-medium text-sm text-meb-dark/80">
+                <a href="#sobre" class="hover:text-meb-terracotta transition">Sobre Nós</a>
+                <a href="#espaco" class="hover:text-meb-terracotta transition">Nosso Espaço</a>
+                <a href="#servicos" class="hover:text-meb-terracotta transition">Serviços</a>
+                <a href="#portfolio" class="hover:text-meb-terracotta transition">Transformações</a>
+                <a href="#depoimentos" class="hover:text-meb-terracotta transition">Avaliações</a>
+                <a href="#localizacao" class="hover:text-meb-terracotta transition">Localização</a>
+            </nav>
+
+            <!-- Ações Diretas -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="https://wa.me/5555996441608" target="_blank" class="p-2.5 rounded-full bg-emerald-50 text-emerald-600 hover:bg-emerald-100 transition" title="WhatsApp Direct">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+                <a href="https://popa546.gendo.app/#/" target="_blank" class="bg-meb-dark text-white px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-meb-terracotta transition shadow-md hover:shadow-lg">
+                    <i class="fa-regular fa-calendar-check mr-1.5"></i> Agendar On-line
+                </a>
+            </div>
+
+            <!-- Botão Menu Mobile -->
+            <button id="mobileMenuBtn" aria-label="Abrir menu" class="md:hidden p-2 text-meb-dark focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Menu Drawer Mobile -->
+        <div id="mobileDrawer" class="hidden md:hidden bg-white/95 backdrop-blur-md border-b border-meb-warmRose/20 px-6 py-6 space-y-4">
+            <a href="#sobre" class="mobile-link block font-medium text-lg text-meb-dark">Sobre Nós</a>
+            <a href="#espaco" class="mobile-link block font-medium text-lg text-meb-dark">Nosso Espaço</a>
+            <a href="#servicos" class="mobile-link block font-medium text-lg text-meb-dark">Serviços</a>
+            <a href="#portfolio" class="mobile-link block font-medium text-lg text-meb-dark">Transformações</a>
+            <a href="#depoimentos" class="mobile-link block font-medium text-lg text-meb-dark">Avaliações</a>
+            <a href="#localizacao" class="mobile-link block font-medium text-lg text-meb-dark">Localização</a>
+            <div class="pt-4 flex flex-col gap-3">
+                <a href="https://popa546.gendo.app/#/" target="_blank" class="w-full text-center bg-meb-terracotta text-white py-3 rounded-xl font-bold">
+                    Agendar Horário On-line
+                </a>
+                <a href="https://wa.me/5555996441608" target="_blank" class="w-full text-center border border-emerald-500 text-emerald-600 py-3 rounded-xl font-bold">
+                    Falar via WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-16 md:pt-40 md:pb-28 bg-hero-gradient overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Coluna Texto Hero -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-white/90 px-4 py-2 rounded-full border border-meb-warmRose/30 shadow-sm">
+                        <span class="flex h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-meb-dark">⭐ 4.9 de 5.0 no Google • Santiago / RS</span>
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-meb-dark leading-[1.15]">
+                        Sua beleza valorizada, <br>
+                        <span class="italic text-meb-terracotta">sua autoestima elevada.</span>
+                    </h1>
+
+                    <p class="text-meb-dark/70 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        O Salão MEB oferece uma experiência inesquecível que toda mulher merece. Otimizamos seu tempo e cuidamos de você com técnicas exclusivas no coração do Bairro Vila Nova.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="https://popa546.gendo.app/#/" target="_blank" class="bg-meb-terracotta text-white px-8 py-4 rounded-full font-bold text-center hover:bg-meb-dark transition shadow-lg shadow-meb-terracotta/30 flex items-center justify-center gap-2">
+                            <i class="fa-regular fa-calendar-check text-lg"></i> Agendar Seu Horário On-line
+                        </a>
+                        <a href="https://wa.me/5555996441608" target="_blank" class="border-2 border-meb-dark/20 text-meb-dark px-7 py-4 rounded-full font-bold text-center hover:border-meb-terracotta hover:text-meb-terracotta transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-600 text-xl"></i> Atendimento WhatsApp
+                        </a>
+                    </div>
+
+                    <!-- Métricas de Confiança -->
+                    <div class="pt-6 border-t border-meb-warmRose/30 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 text-left">
+                        <div>
+                            <span class="block font-serif text-2xl md:text-3xl font-bold text-meb-dark">4.9★</span>
+                            <span class="text-xs text-meb-dark/60 font-medium">+95 Avaliações</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-2xl md:text-3xl font-bold text-meb-dark">Premium</span>
+                            <span class="text-xs text-meb-dark/60 font-medium">Produtos Top de Linha</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-2xl md:text-3xl font-bold text-meb-dark">Vila Nova</span>
+                            <span class="text-xs text-meb-dark/60 font-medium">Santiago - RS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Mídia Hero (Galeria Flutuante) -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Imagem Principal Hero: MEB10_2.jpg -->
+                        <div class="relative z-10 rounded-3xl overflow-hidden shadow-card-hover border-4 border-white aspect-[4/5] group">
+                            <img src="MEB10_2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80';" alt="Cliente com Cabelo Longo e Ondulado MEB" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-meb-dark/60 via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute bottom-6 left-6 right-6 text-white">
+                                <span class="bg-white/20 backdrop-blur-md text-xs px-3 py-1 rounded-full uppercase tracking-wider font-semibold">Resultado Real MEB</span>
+                                <h3 class="font-serif text-xl font-bold mt-2">Movimento, Brilho & Leveza</h3>
+                            </div>
+                        </div>
+
+                        <!-- Card Secundário Sobreposto: MEB8_2.jpg -->
+                        <div class="absolute -bottom-8 -left-8 z-20 w-48 sm:w-56 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden sm:block transform -rotate-3 hover:rotate-0 transition duration-300">
+                            <img src="MEB8_2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80';" alt="Cliente Sorridente Mechas MEB" class="w-full h-36 object-cover">
+                            <div class="bg-white p-3 text-center">
+                                <p class="text-xs font-bold text-meb-dark">Mechas & Iluminação</p>
+                                <div class="text-amber-400 text-[10px] mt-0.5">★★★★★</div>
+                            </div>
+                        </div>
+
+                        <!-- Badge de Garantia Flutuante -->
+                        <div class="absolute -top-6 -right-6 z-20 bg-white p-4 rounded-2xl shadow-xl border border-meb-warmRose/30 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-meb-blush flex items-center justify-center text-meb-terracotta font-bold">
+                                <i class="fa-solid fa-gem text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-meb-dark">Espaço Exclusivo</p>
+                                <p class="text-[11px] text-meb-dark/60">Santiago - RS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE NÓS / FUNDADORES -->
+    <section id="sobre" class="py-20 md:py-28 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Foto dos Fundadores: MEB1.jpeg -->
+                <div class="lg:col-span-6 relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-meb-warmRose/30 group">
+                        <img src="MEB1.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80';" alt="Fundadores do Salão MEB na Fachada" class="w-full h-auto object-cover group-hover:scale-102 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full border border-meb-warmRose/30 flex items-center gap-2">
+                            <img src="MEB3_2.jpg" onerror="this.onerror=null; this.src='https://placehold.co/50x50/FDF7F4/D97760?text=MEB';" alt="Borboleta MEB" class="w-5 h-5 rounded-full">
+                            <span class="text-xs font-bold text-meb-dark uppercase tracking-wider">Boas-Vindas ao MEB</span>
+                        </div>
+                    </div>
+                    <!-- Card de citação sobre a foto -->
+                    <div class="mt-4 sm:mt-0 sm:absolute sm:-bottom-6 sm:-right-6 bg-meb-nude p-6 rounded-2xl shadow-xl max-w-md border border-meb-warmRose/40">
+                        <p class="font-serif italic text-sm text-meb-dark/90">
+                            "Nosso grande compromisso é elevar sua autoestima, realçar sua beleza e otimizar seu tempo."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Conteúdo Institucional -->
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-meb-terracotta uppercase tracking-widest font-bold text-xs">Conheça Nossa História</span>
+                    
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-meb-dark leading-tight">
+                        Um novo conceito em salão de beleza pensado para você.
+                    </h2>
+
+                    <p class="text-meb-dark/70 leading-relaxed text-base">
+                        O <strong>MEB Salão de Beleza</strong> nasceu do propósito de proporcionar às mulheres de Santiago e região um espaço único, elegante e extremamente acolhedor. Entendemos que seu tempo é precioso, por isso unimos agilidade, excelência técnica e atendimento caloroso.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="bg-meb-blush p-4 rounded-2xl border border-meb-warmRose/20">
+                            <h4 class="font-serif font-bold text-meb-dark text-base mb-1">
+                                <i class="fa-solid fa-heart text-meb-terracotta mr-1.5"></i> Atendimento Humanizado
+                            </h4>
+                            <p class="text-xs text-meb-dark/70">Escuta ativa para entender exatamente o resultado que você deseja.</p>
+                        </div>
+                        <div class="bg-meb-blush p-4 rounded-2xl border border-meb-warmRose/20">
+                            <h4 class="font-serif font-bold text-meb-dark text-base mb-1">
+                                <i class="fa-solid fa-graduation-cap text-meb-terracotta mr-1.5"></i> Método MEB
+                            </h4>
+                            <p class="text-xs text-meb-dark/70">Técnicas próprias desenvolvidas para resultados impecáveis e duradouros.</p>
+                        </div>
+                    </div>
+
+                    <!-- Botões de Conexão com Redes Sociais -->
+                    <div class="pt-4 flex flex-wrap items-center gap-4">
+                        <a href="https://www.instagram.com/mebsalao/" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 text-white px-5 py-2.5 rounded-full text-xs font-bold hover:opacity-95 transition shadow-sm">
+                            <i class="fa-brands fa-instagram text-base"></i> @mebsalao
+                        </a>
+                        <a href="https://www.instagram.com/metodomeb/" target="_blank" class="inline-flex items-center gap-2 bg-meb-dark text-white px-5 py-2.5 rounded-full text-xs font-bold hover:bg-meb-terracotta transition shadow-sm">
+                            <i class="fa-solid fa-award text-base text-meb-gold"></i> @metodomeb
+                        </a>
+                        <a href="https://www.facebook.com/p/Sal%C3%A3o-MEB-100069326976275/?locale=pt_BR" target="_blank" class="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-full text-xs font-bold hover:opacity-95 transition shadow-sm">
+                            <i class="fa-brands fa-facebook-f text-base"></i> Facebook MEB
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO NOSSO ESPAÇO / ESTRUTURA MODERNA -->
+    <section id="espaco" class="py-20 md:py-28 bg-meb-blush border-y border-meb-warmRose/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-meb-terracotta uppercase tracking-widest font-bold text-xs">Infraestrutura & Conforto</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-meb-dark">Conheça o Ambiente do Salão MEB</h2>
+                <p class="text-meb-dark/70 text-base">
+                    Projetado em cada detalhe com arquitetura clean, iluminação cênica e mobiliário de alto padrão para que você relaxe enquanto renova o visual.
+                </p>
+            </div>
+
+            <!-- Grid de Fotos do Espaço (4 Fotos Chave) -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Foto Espaço 1: MEB2.jpg (Lounge de Espera com Sofá) -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-card-hover transition duration-500 border border-meb-warmRose/20">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="MEB2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=600&q=80';" alt="Lounge de Espera Salão MEB" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-[11px] font-bold px-3 py-1 rounded-full text-meb-dark">Lounge & Recepção</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-serif font-bold text-lg text-meb-dark mb-1">Recepção Acolhedora</h3>
+                        <p class="text-xs text-meb-dark/60 leading-relaxed">Sofá aconchegante, mesa de degustação e recepção calorosa desde sua chegada.</p>
+                    </div>
+                </div>
+
+                <!-- Foto Espaço 2: MEB7_2.jpg (Bancadas de Atendimento & Espelhos LED) -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-card-hover transition duration-500 border border-meb-warmRose/20">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="MEB7_2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=600&q=80';" alt="Bancadas de Atendimento com Espelhos LED" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-[11px] font-bold px-3 py-1 rounded-full text-meb-dark">Bancadas Premium</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-serif font-bold text-lg text-meb-dark mb-1">Espelhos LED & Estilo</h3>
+                        <p class="text-xs text-meb-dark/60 leading-relaxed">Cadeiras ergonômicas e iluminação perfeita para precisão em cada procedimento.</p>
+                    </div>
+                </div>
+
+                <!-- Foto Espaço 3: MEB6_2.jpg (Prateleiras de Produtos de Linha) -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-card-hover transition duration-500 border border-meb-warmRose/20">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="MEB6_2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80';" alt="Produtos Capilares de Linha Premium" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-[11px] font-bold px-3 py-1 rounded-full text-meb-dark">Cosméticos de Ponta</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-serif font-bold text-lg text-meb-dark mb-1">Marcas Selecionadas</h3>
+                        <p class="text-xs text-meb-dark/60 leading-relaxed">Prateleiras abastecidas com os melhores tratamentos para a saúde dos seus fios.</p>
+                    </div>
+                </div>
+
+                <!-- Foto Espaço 4: MEB4_2.jpg (Iluminação Pendente & Ambiente Integrado) -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-card-hover transition duration-500 border border-meb-warmRose/20">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="MEB4_2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=600&q=80';" alt="Lustre Pendente e Vista Ampla do Salão" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-[11px] font-bold px-3 py-1 rounded-full text-meb-dark">Novo Endereço</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-serif font-bold text-lg text-meb-dark mb-1">Design & Conforto</h3>
+                        <p class="text-xs text-meb-dark/60 leading-relaxed">Iluminação decorativa moderna e layout amplo no endereço Tito Beccon 578.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SERVIÇOS & EXPERIÊNCIA DO LAVATÓRIO -->
+    <section id="servicos" class="py-20 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            
+            <div class="grid lg:grid-cols-12 gap-12 items-center mb-16">
+                
+                <!-- Destaque Lavatório: MEB11.jpeg -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-meb-blush group">
+                        <img src="MEB11.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=800&q=80';" alt="Experiência de Lavatório e Tratamento Capilar MEB" class="w-full h-auto object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-meb-dark/70 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <span class="bg-meb-terracotta text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Momento SPA Capilar</span>
+                            <h3 class="font-serif text-2xl font-bold mt-2">Lavatório & Massagem Relaxante</h3>
+                            <p class="text-xs text-white/80 mt-1">Higiene profunda, hidratação e um ritual inesquecível de cuidado.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lista de Serviços -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-meb-terracotta uppercase tracking-widest font-bold text-xs">Especialidades MEB</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-meb-dark">Serviços Executados com Perfeição</h2>
+                    <p class="text-meb-dark/70 text-base">
+                        Oferecemos um leque completo de procedimentos para que você resolva todas as suas necessidades de beleza em um só local.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-6 pt-2">
+                        
+                        <!-- Card Serviço 1 -->
+                        <div class="p-5 rounded-2xl bg-meb-blush border border-meb-warmRose/30 hover:border-meb-terracotta transition">
+                            <div class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-meb-terracotta text-lg mb-3">
+                                <i class="fa-solid fa-scissors"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-lg text-meb-dark">Cortes & Modelagem</h3>
+                            <p class="text-xs text-meb-dark/70 mt-1">Cortes modernos, visagismo e escovas com acabamento duradouro.</p>
+                        </div>
+
+                        <!-- Card Serviço 2 -->
+                        <div class="p-5 rounded-2xl bg-meb-blush border border-meb-warmRose/30 hover:border-meb-terracotta transition">
+                            <div class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-meb-terracotta text-lg mb-3">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-lg text-meb-dark">Mechas & Coloração</h3>
+                            <p class="text-xs text-meb-dark/70 mt-1">Técnicas exclusivas para blondes perfeitos e morenas iluminadas.</p>
+                        </div>
+
+                        <!-- Card Serviço 3 -->
+                        <div class="p-5 rounded-2xl bg-meb-blush border border-meb-warmRose/30 hover:border-meb-terracotta transition">
+                            <div class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-meb-terracotta text-lg mb-3">
+                                <i class="fa-solid fa-spa"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-lg text-meb-dark">Tratamentos & SPA</h3>
+                            <p class="text-xs text-meb-dark/70 mt-1">Cronograma capilar, reconstrução de fios e terapia de couro cabeludo.</p>
+                        </div>
+
+                        <!-- Card Serviço 4 -->
+                        <div class="p-5 rounded-2xl bg-meb-blush border border-meb-warmRose/30 hover:border-meb-terracotta transition">
+                            <div class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-meb-terracotta text-lg mb-3">
+                                <i class="fa-solid fa-face-smile-beam"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-lg text-meb-dark">Maquiagem & Produção</h3>
+                            <p class="text-xs text-meb-dark/70 mt-1">Produções para festas, formaturas, noivas e eventos sociais.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://popa546.gendo.app/#/" target="_blank" class="inline-flex items-center gap-2 bg-meb-dark text-white px-7 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-meb-terracotta transition shadow-md">
+                            <i class="fa-regular fa-calendar-check text-sm"></i> Ver Tabela Completa e Agendar
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO PORTFÓLIO DE TRANSFORMAÇÕES -->
+    <section id="portfolio" class="py-20 md:py-28 bg-meb-blush">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-meb-terracotta uppercase tracking-widest font-bold text-xs">Galeria de Resultados</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-meb-dark">Transformações Reais MEB</h2>
+                <p class="text-meb-dark/70 text-base">
+                    Confira alguns dos trabalhos executados pelas nossas profissionais em nossas clientes.
+                </p>
+            </div>
+
+            <!-- Grid de Fotos do Portfólio (MEB8_2, MEB9_2, MEB10_2) -->
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Card Portfólio 1: MEB8_2.jpg (Mechas/Iluminado) -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-meb-warmRose/30 hover:-translate-y-2 transition duration-500">
+                    <div class="aspect-[4/5] overflow-hidden relative">
+                        <img src="MEB8_2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80';" alt="Cliente Morena Iluminada MEB" class="w-full h-full object-cover group-hover:scale-108 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-meb-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                            <div class="text-white">
+                                <span class="bg-meb-terracotta text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Mechas Iluminadas</span>
+                                <h4 class="font-serif font-bold text-lg mt-1">Loiro Saudável & Ondas</h4>
+                                <p class="text-xs text-white/80">Técnica de iluminação com preservação total do fio.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="font-serif font-bold text-lg text-meb-dark">Iluminação & Mechas</h3>
+                        <p class="text-xs text-meb-dark/60 mt-1">Tonalidade personalizada para cada tom de pele</p>
+                    </div>
+                </div>
+
+                <!-- Card Portfólio 2: MEB9_2.jpg (Maquiagem Social/Noiva) -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-meb-warmRose/30 hover:-translate-y-2 transition duration-500">
+                    <div class="aspect-[4/5] overflow-hidden relative">
+                        <img src="MEB9_2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80';" alt="Maquiagem Social MEB" class="w-full h-full object-cover group-hover:scale-108 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-meb-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                            <div class="text-white">
+                                <span class="bg-meb-terracotta text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Make Up & Hair</span>
+                                <h4 class="font-serif font-bold text-lg mt-1">Produção Social de Luxo</h4>
+                                <p class="text-xs text-white/80">Pele blindada, esfumado elegante e acabamento glow.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="font-serif font-bold text-lg text-meb-dark">Maquiagem & Penteado</h3>
+                        <p class="text-xs text-meb-dark/60 mt-1">Elegância e durabilidade para seus eventos especiais</p>
+                    </div>
+                </div>
+
+                <!-- Card Portfólio 3: MEB10_2.jpg (Morena Iluminada / Styling) -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-meb-warmRose/30 hover:-translate-y-2 transition duration-500">
+                    <div class="aspect-[4/5] overflow-hidden relative">
+                        <img src="MEB10_2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80';" alt="Cabelo Castanho com Movimento MEB" class="w-full h-full object-cover group-hover:scale-108 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-meb-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                            <div class="text-white">
+                                <span class="bg-meb-terracotta text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Corte & Tratamento</span>
+                                <h4 class="font-serif font-bold text-lg mt-1">Balanço & Brilho Espelhado</h4>
+                                <p class="text-xs text-white/80">Tratamento de nutrição com escova modelada.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="font-serif font-bold text-lg text-meb-dark">Styling & Tratamento</h3>
+                        <p class="text-xs text-meb-dark/60 mt-1">Fios revitalizados com sedosidade incomparável</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="https://www.instagram.com/mebsalao/" target="_blank" class="inline-flex items-center gap-2 border-2 border-meb-terracotta text-meb-terracotta px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-meb-terracotta hover:text-white transition">
+                    <i class="fa-brands fa-instagram text-base"></i> Ver Mais Fotos no Instagram @mebsalao
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO AVALIAÇÕES DO GOOGLE (PROVA SOCIAL REAL) -->
+    <section id="depoimentos" class="py-20 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <div class="inline-flex items-center gap-1 text-amber-400 text-lg">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-meb-dark">O Que Nossas Clientes Dizem</h2>
+                <p class="text-meb-dark/70 text-sm">
+                    Classificação <strong>4.9 de 5 estrelas</strong> no Google com dezenas de depoimentos carinhosos.
+                </p>
+            </div>
+
+            <!-- Cards de Comentários Reais -->
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Avaliação 1 -->
+                <div class="bg-meb-blush p-8 rounded-3xl border border-meb-warmRose/30 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="font-serif italic text-meb-dark/80 text-base leading-relaxed">
+                            "A Luana é uma profissional maravilhosa, amo o trabalho dela."
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-meb-warmRose/20 flex items-center justify-between">
+                        <div>
+                            <span class="font-bold text-sm text-meb-dark block">Cliente Registrada</span>
+                            <span class="text-[11px] text-meb-dark/50">Avaliação do Google</span>
+                        </div>
+                        <span class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-emerald-600 shadow-sm">
+                            <i class="fa-brands fa-google text-sm"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Avaliação 2 -->
+                <div class="bg-meb-blush p-8 rounded-3xl border border-meb-warmRose/30 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="font-serif italic text-meb-dark/80 text-base leading-relaxed">
+                            "Lugar maravilhoso e com profissionais impecáveis!"
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-meb-warmRose/20 flex items-center justify-between">
+                        <div>
+                            <span class="font-bold text-sm text-meb-dark block">Cliente Registrada</span>
+                            <span class="text-[11px] text-meb-dark/50">Avaliação do Google</span>
+                        </div>
+                        <span class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-emerald-600 shadow-sm">
+                            <i class="fa-brands fa-google text-sm"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Avaliação 3 -->
+                <div class="bg-meb-blush p-8 rounded-3xl border border-meb-warmRose/30 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="font-serif italic text-meb-dark/80 text-base leading-relaxed">
+                            "Espaço aconchegante, atendimento impecável e atenção em cada detalhe do atendimento."
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-meb-warmRose/20 flex items-center justify-between">
+                        <div>
+                            <span class="font-bold text-sm text-meb-dark block">Cliente Registrada</span>
+                            <span class="text-[11px] text-meb-dark/50">Avaliação do Google</span>
+                        </div>
+                        <span class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-emerald-600 shadow-sm">
+                            <i class="fa-brands fa-google text-sm"></i>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO LOCALIZAÇÃO & NOVO ENDEREÇO -->
+    <section id="localizacao" class="py-20 md:py-28 bg-meb-blush border-t border-meb-warmRose/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Informações de Endereço -->
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-meb-terracotta uppercase tracking-widest font-bold text-xs">Venha nos Visitar</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-meb-dark">Localização & Funcionamento</h2>
+                    
+                    <!-- Destaque Foto Endereço: MEB4_2.jpg -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-lg border-2 border-white mb-6">
+                        <img src="MEB4_2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=600&q=80';" alt="Foto Interior com Aviso de Novo Endereço Tito Beccon 578" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-meb-dark/40 flex items-center justify-center p-4">
+                            <div class="bg-white/95 backdrop-blur-md px-6 py-3 rounded-full text-center shadow-md">
+                                <span class="text-xs uppercase tracking-widest text-meb-terracotta font-bold block">Endereço Oficial</span>
+                                <strong class="text-meb-dark text-sm sm:text-base font-serif">Rua Tito Beccon, 578 - Vila Nova</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-white text-meb-terracotta flex items-center justify-center shrink-0 shadow-sm border border-meb-warmRose/20">
+                                <i class="fa-solid fa-map-pin text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-meb-dark text-sm">Bairro Vila Nova</h4>
+                                <p class="text-xs text-meb-dark/70">R. Tito Beccon, 578 - Santiago - RS, 97714-015</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-white text-meb-terracotta flex items-center justify-center shrink-0 shadow-sm border border-meb-warmRose/20">
+                                <i class="fa-solid fa-phone text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-meb-dark text-sm">Telefone / Agendamentos</h4>
+                                <p class="text-xs text-meb-dark/70">(55) 99644-1608</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-white text-meb-terracotta flex items-center justify-center shrink-0 shadow-sm border border-meb-warmRose/20">
+                                <i class="fa-solid fa-clock text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-meb-dark text-sm">Horários de Atendimento</h4>
+                                <p class="text-xs text-meb-dark/70">Terça a Sábado: a partir das 07:30</p>
+                                <span class="text-[11px] text-meb-terracotta font-semibold mt-1 block">📌 Pico de atendimento por volta das 15:00. Agende seu horário previamente!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 flex gap-4">
+                        <a href="https://maps.google.com/?q=R.+Tito+Beccon,+578+-+Vila+Nova,+Santiago+-+RS" target="_blank" class="bg-meb-dark text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-meb-terracotta transition shadow-md">
+                            <i class="fa-solid fa-diamond-turn-right mr-1"></i> Como Chegar (GPS)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Google Maps Embed -->
+                <div class="lg:col-span-6">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white h-[420px] relative">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3478.487747805178!2d-54.8687705!3d-29.1919426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9503ab49bbbbbbbb%3A0x0!2sR.%20Tito%20Beccon%2C%20578%20-%20Vila%20Nova%2C%20Santiago%20-%20RS%2C%2097714-015!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                            class="w-full h-full border-0" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER INSTITUCIONAL -->
+    <footer class="bg-meb-espresso text-white pt-16 pb-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-4 gap-10 mb-12">
+            
+            <div class="space-y-4 md:col-span-1">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden">
+                        <img src="MEB3_2.jpg" onerror="this.onerror=null; this.src='https://placehold.co/100x100/FDF7F4/D97760?text=MEB';" alt="Logo MEB" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <span class="font-serif text-xl font-bold tracking-tight text-white block">MEB</span>
+                        <span class="text-[9px] tracking-widest text-meb-warmRose uppercase font-bold">Salão de Beleza</span>
+                    </div>
+                </div>
+                <p class="text-stone-400 text-xs leading-relaxed">
+                    Eleve sua autoestima e realce sua beleza natural. Atendimento exclusivo no Bairro Vila Nova em Santiago, RS.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4">Navegação</h4>
+                <ul class="space-y-2 text-xs text-stone-400">
+                    <li><a href="#sobre" class="hover:text-meb-warmRose transition">Sobre os Fundadores</a></li>
+                    <li><a href="#espaco" class="hover:text-meb-warmRose transition">Nosso Espaço</a></li>
+                    <li><a href="#servicos" class="hover:text-meb-warmRose transition">Serviços & Lavatório</a></li>
+                    <li><a href="#portfolio" class="hover:text-meb-warmRose transition">Galeria de Trabalhos</a></li>
+                    <li><a href="#localizacao" class="hover:text-meb-warmRose transition">Localização</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4">Agende On-line</h4>
+                <p class="text-xs text-stone-400 mb-3">Reserve seu horário direto no sistema Gendo:</p>
+                <a href="https://popa546.gendo.app/#/" target="_blank" class="inline-block bg-meb-terracotta hover:bg-white hover:text-meb-dark text-white text-xs font-bold px-5 py-2.5 rounded-full transition shadow-md">
+                    <i class="fa-regular fa-calendar-check mr-1"></i> Acessar Gendo MEB
+                </a>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4">Siga o MEB</h4>
+                <div class="flex gap-3">
+                    <a href="https://www.instagram.com/mebsalao/" target="_blank" class="w-10 h-10 rounded-full bg-stone-800 hover:bg-meb-terracotta text-white flex items-center justify-center transition" title="Instagram Salão">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                    </a>
+                    <a href="https://www.instagram.com/metodomeb/" target="_blank" class="w-10 h-10 rounded-full bg-stone-800 hover:bg-meb-terracotta text-white flex items-center justify-center transition" title="Método MEB">
+                        <i class="fa-solid fa-graduation-cap text-base"></i>
+                    </a>
+                    <a href="https://www.facebook.com/p/Sal%C3%A3o-MEB-100069326976275/?locale=pt_BR" target="_blank" class="w-10 h-10 rounded-full bg-stone-800 hover:bg-meb-terracotta text-white flex items-center justify-center transition" title="Facebook">
+                        <i class="fa-brands fa-facebook-f text-base"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+            <p>&copy; 2026 MEB Salão de Beleza. Todos os direitos reservados.</p>
+            <p>Santiago - Rio Grande do Sul</p>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP COM BADGE NOTIFICAÇÃO -->
+    <a href="https://wa.me/5555996441608" target="_blank" aria-label="Contato via WhatsApp" class="fixed bottom-6 right-6 z-50 bg-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-emerald-600 hover:scale-110 transition duration-300">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="absolute -top-1 -right-1 flex h-4 w-4">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-700"></span>
+        </span>
+    </a>
+
+    <!-- SCRIPT DE INTERATIVIDADE DO MENU MOBILE E SCROLL -->
+    <script>
+        const btn = document.getElementById('mobileMenuBtn');
+        const drawer = document.getElementById('mobileDrawer');
+        const links = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            drawer.classList.toggle('hidden');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                drawer.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
