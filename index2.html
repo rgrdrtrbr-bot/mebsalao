@@ -26,8 +26,6 @@
                             blush: '#FDF7F4',
                             nude: '#F4ECE4',
                             terracotta: '#D97760',
-                            burgundy: '#6B1616',
-                            burgundyDark: '#4A0D0D',
                             warmRose: '#E8A598',
                             gold: '#D4AF37',
                             goldLight: '#F3E5AB',
@@ -46,7 +44,6 @@
                         'soft-glow': '0 20px 40px -15px rgba(217, 119, 96, 0.15)',
                         'gold-glow': '0 10px 30px -5px rgba(212, 175, 55, 0.35)',
                         'card-hover': '0 25px 50px -12px rgba(34, 28, 26, 0.12)',
-                        'exclusive-glow': '0 20px 40px -10px rgba(107, 22, 22, 0.4)',
                     }
                 }
             }
@@ -71,9 +68,6 @@
         }
         .bg-gold-metallic {
             background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
-        }
-        .bg-burgundy-gradient {
-            background: linear-gradient(135deg, #5C1010 0%, #3D0909 50%, #2A0404 100%);
         }
         .bg-gold-subtle {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(244, 236, 228, 0.8) 100%);
@@ -106,7 +100,6 @@
             <!-- Menu Desktop -->
             <nav class="hidden md:flex items-center gap-7 font-medium text-sm text-meb-dark/80">
                 <a href="#sobre" class="hover:text-meb-goldDark transition">Sobre Nós</a>
-                <a href="#exclusive" class="hover:text-meb-goldDark transition font-semibold text-meb-burgundy">MEB Exclusive</a>
                 <a href="#espaco" class="hover:text-meb-goldDark transition">Nosso Espaço</a>
                 <a href="#servicos" class="hover:text-meb-goldDark transition">Serviços</a>
                 <a href="#portfolio" class="hover:text-meb-goldDark transition">Transformações</a>
@@ -133,7 +126,6 @@
         <!-- Menu Drawer Mobile -->
         <div id="mobileDrawer" class="hidden md:hidden bg-white/95 backdrop-blur-md border-b border-meb-gold/30 px-6 py-6 space-y-4">
             <a href="#sobre" class="mobile-link block font-medium text-lg text-meb-dark">Sobre Nós</a>
-            <a href="#exclusive" class="mobile-link block font-semibold text-lg text-meb-burgundy">⭐ MEB Exclusive</a>
             <a href="#espaco" class="mobile-link block font-medium text-lg text-meb-dark">Nosso Espaço</a>
             <a href="#servicos" class="mobile-link block font-medium text-lg text-meb-dark">Serviços</a>
             <a href="#portfolio" class="mobile-link block font-medium text-lg text-meb-dark">Transformações</a>
@@ -312,96 +304,8 @@
         </div>
     </section>
 
-    <!-- NOVA SEÇÃO MEB EXCLUSIVE (EM DESTAQUE DE LUXO) -->
-    <section id="exclusive" class="py-20 md:py-28 bg-burgundy-gradient text-white relative overflow-hidden border-y-2 border-meb-gold/40 shadow-exclusive-glow">
-        <!-- Elementos Decorativos de Fundo -->
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-meb-gold/10 rounded-full filter blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-meb-terracotta/20 rounded-full filter blur-3xl pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-            
-            <!-- Cabeçalho de Destaque -->
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-meb-gold/50 shadow-gold-glow">
-                    <i class="fa-solid fa-gem text-meb-gold"></i>
-                    <span class="text-xs font-bold uppercase tracking-widest text-meb-goldLight">Programa VIP MEB</span>
-                </div>
-                
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-                    Por que ser <span class="italic text-gold-gradient">Exclusive?</span>
-                </h2>
-
-                <p class="text-meb-champagne text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto">
-                    Mais do que benefícios, um novo padrão de cuidado continuo e personalizado.
-                </p>
-
-                <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-meb-gold to-transparent mx-auto pt-1"></div>
-            </div>
-
-            <!-- Grid com as 3 Fotos Exclusive -->
-            <div class="grid md:grid-cols-3 gap-8 mb-16">
-                
-                <!-- Card Exclusive 1 -->
-                <div class="group bg-white/5 backdrop-blur-md rounded-3xl overflow-hidden border border-meb-gold/30 hover:border-meb-gold transition duration-500 shadow-xl flex flex-col justify-between">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="Exclusive1.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/5C1010/F3E5AB?text=Por+que+ser+Exclusive%3F';" alt="Por que ser Exclusive? MEB Salão" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                    </div>
-                    <div class="p-6 text-center bg-black/20">
-                        <span class="text-xs font-bold uppercase tracking-widest text-meb-gold block mb-1">Novo Padrão</span>
-                        <h3 class="font-serif text-lg font-bold text-white">Mais do que benefícios</h3>
-                    </div>
-                </div>
-
-                <!-- Card Exclusive 2 -->
-                <div class="group bg-white/5 backdrop-blur-md rounded-3xl overflow-hidden border border-meb-gold/30 hover:border-meb-gold transition duration-500 shadow-xl flex flex-col justify-between md:-translate-y-3">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="Exclusive2.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/5C1010/F3E5AB?text=Se+colocar+como+Prioridade';" alt="Ser Exclusive é se colocar como Prioridade" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                    </div>
-                    <div class="p-6 text-center bg-black/20">
-                        <span class="text-xs font-bold uppercase tracking-widest text-meb-gold block mb-1">Não Negocie Consigo Mesma</span>
-                        <h3 class="font-serif text-lg font-bold text-white">Se coloque como PRIORIDADE!</h3>
-                    </div>
-                </div>
-
-                <!-- Card Exclusive 3 -->
-                <div class="group bg-white/5 backdrop-blur-md rounded-3xl overflow-hidden border border-meb-gold/30 hover:border-meb-gold transition duration-500 shadow-xl flex flex-col justify-between">
-                    <div class="aspect-[4/5] overflow-hidden relative">
-                        <img src="Exclusive3.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/5C1010/F3E5AB?text=Mais+organizacao+na+sua+rotina';" alt="Mais organização na sua rotina com cuidado MEB" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                    </div>
-                    <div class="p-6 text-center bg-black/20">
-                        <span class="text-xs font-bold uppercase tracking-widest text-meb-gold block mb-1">Rotina Estruturada</span>
-                        <h3 class="font-serif text-lg font-bold text-white">Cuidado que acompanha você</h3>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Caixa com a Mensagem Principal e Chamada -->
-            <div class="max-w-4xl mx-auto bg-white/10 backdrop-blur-md rounded-3xl p-8 sm:p-12 border-2 border-meb-gold/50 text-center space-y-6 shadow-gold-glow">
-                
-                <p class="font-serif text-xl sm:text-2xl md:text-3xl text-meb-champagne font-light leading-relaxed">
-                    "O <strong class="text-meb-gold font-bold">EXCLUSIVE</strong> estrutura sua rotina, mantém seus cuidados em dia e sustenta um padrão que não depende de ocasião."
-                </p>
-                
-                <div class="py-2">
-                    <span class="inline-block font-sans text-base sm:text-xl font-semibold text-white bg-white/10 px-6 py-3 rounded-full border border-white/20">
-                        ✨ Cuidar de você deixa de ser exceção — e passa a ser o seu normal.
-                    </span>
-                </div>
-
-                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="https://wa.me/5555996441608?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20programa%20EXCLUSIVE%20do%20Salão%20MEB" target="_blank" class="w-full sm:w-auto bg-gold-metallic text-meb-espresso px-9 py-4 rounded-full font-bold text-sm uppercase tracking-wider hover:shadow-gold-glow transition duration-300 flex items-center justify-center gap-3">
-                        <i class="fa-brands fa-whatsapp text-lg"></i> Quer saber mais? Entre em contato conosco 🤎
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
     <!-- SEÇÃO NOSSO ESPAÇO / ESTRUTURA MODERNA -->
-    <section id="espaco" class="py-20 md:py-28 bg-meb-blush border-b border-meb-gold/30">
+    <section id="espaco" class="py-20 md:py-28 bg-meb-blush border-y border-meb-gold/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
@@ -814,7 +718,6 @@
                 <h4 class="font-serif text-sm font-bold text-meb-gold uppercase tracking-wider mb-4">Navegação</h4>
                 <ul class="space-y-2 text-xs text-stone-400">
                     <li><a href="#sobre" class="hover:text-meb-gold transition">Sobre os Fundadores</a></li>
-                    <li><a href="#exclusive" class="hover:text-meb-gold transition">Programa MEB Exclusive</a></li>
                     <li><a href="#espaco" class="hover:text-meb-gold transition">Nosso Espaço</a></li>
                     <li><a href="#servicos" class="hover:text-meb-gold transition">Serviços & Lavatório</a></li>
                     <li><a href="#portfolio" class="hover:text-meb-gold transition">Galeria de Trabalhos</a></li>
