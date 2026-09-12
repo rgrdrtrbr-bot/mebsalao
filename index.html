@@ -191,34 +191,38 @@
 
                 <!-- Coluna Mídia Hero (Galeria Flutuante) -->
                 <div class="lg:col-span-5 relative">
-                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                    <div class="relative mx-auto max-w-md lg:max-w-none pt-4 pb-10 sm:pb-0">
                         <!-- Imagem Principal Hero: MEB10_3.jpg -->
                         <div class="relative z-10 rounded-3xl overflow-hidden shadow-card-hover border-4 border-meb-gold/40 group">
                             <img src="MEB10_3.jpg" onerror="this.onerror=null; this.src='https://placehold.co/800x1000/FDF7F4/D4AF37?text=MEB+Hair';" alt="Cliente com Cabelo Longo e Ondulado MEB" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-meb-dark/70 via-transparent to-transparent opacity-80"></div>
-                            <div class="absolute bottom-6 left-6 right-6 text-white">
-                                <span class="bg-gold-metallic text-meb-espresso text-xs px-3 py-1 rounded-full uppercase tracking-wider font-bold">Resultado Real MEB</span>
-                                <h3 class="font-serif text-xl font-bold mt-2">Movimento, Brilho & Leveza</h3>
+                            <div class="absolute inset-0 bg-gradient-to-t from-meb-dark/80 via-transparent to-transparent opacity-80"></div>
+                            
+                            <!-- Badges e Textos sem sobreposição -->
+                            <div class="absolute top-4 left-4 z-20">
+                                <span class="bg-gold-metallic text-meb-espresso text-[11px] px-3 py-1 rounded-full uppercase tracking-wider font-bold shadow-sm">Resultado Real MEB</span>
+                            </div>
+                            <div class="absolute bottom-5 left-5 z-20 text-white">
+                                <h3 class="font-serif text-xs sm:text-sm md:text-base lg:text-lg font-bold leading-tight whitespace-nowrap">Movimento, Brilho & Leveza</h3>
                             </div>
                         </div>
 
                         <!-- Card Secundário Sobreposto: MEB8_3.jpg -->
-                        <div class="absolute -bottom-8 -left-8 z-20 w-48 sm:w-56 rounded-2xl overflow-hidden shadow-2xl border-2 border-meb-gold hidden sm:block transform -rotate-3 hover:rotate-0 transition duration-300">
-                            <img src="MEB8_3.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400/FDF7F4/D4AF37?text=MEB+Mechas';" alt="Cliente Sorridente Mechas MEB" class="w-full h-36 object-cover">
-                            <div class="bg-white p-3 text-center">
-                                <p class="text-xs font-bold text-meb-dark">Mechas & Iluminação</p>
-                                <div class="text-meb-gold text-[11px] mt-0.5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <div class="absolute -bottom-10 -right-4 sm:-right-10 lg:-right-14 z-30 w-32 sm:w-40 rounded-2xl overflow-hidden shadow-2xl border-2 border-meb-gold transform rotate-3 hover:rotate-0 transition duration-300 bg-white">
+                            <img src="MEB8_3.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x800/FDF7F4/D4AF37?text=MEB+Mechas';" alt="Cliente Sorridente Mechas MEB" class="w-full h-28 sm:h-36 object-cover">
+                            <div class="p-2 text-center bg-white">
+                                <p class="text-[10px] sm:text-[11px] font-bold text-meb-dark leading-tight">Mechas & Iluminação</p>
+                                <div class="text-meb-gold text-[9px] sm:text-[10px] mt-0.5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                             </div>
                         </div>
 
                         <!-- Badge de Garantia Flutuante com Dourado -->
-                        <div class="absolute -top-6 -right-6 z-20 bg-white p-4 rounded-2xl shadow-gold-glow border border-meb-gold/40 flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-gold-metallic flex items-center justify-center text-meb-espresso font-bold">
-                                <i class="fa-solid fa-crown text-lg"></i>
+                        <div class="absolute -top-4 -left-3 sm:-left-6 z-30 bg-white/95 backdrop-blur-md p-3 rounded-2xl shadow-gold-glow border border-meb-gold/40 flex items-center gap-2.5">
+                            <div class="w-9 h-9 rounded-full bg-gold-metallic flex items-center justify-center text-meb-espresso font-bold shrink-0">
+                                <i class="fa-solid fa-crown text-sm"></i>
                             </div>
                             <div>
-                                <p class="text-xs font-bold text-meb-dark">Espaço Exclusivo</p>
-                                <p class="text-[11px] text-meb-goldDark font-semibold">Santiago - RS</p>
+                                <p class="text-xs font-bold text-meb-dark leading-none">Espaço Exclusivo</p>
+                                <p class="text-[10px] text-meb-goldDark font-semibold mt-0.5">Santiago - RS</p>
                             </div>
                         </div>
                     </div>
@@ -235,13 +239,16 @@
                 
                 <!-- Foto dos Fundadores: MEB1_2.jpeg -->
                 <div class="lg:col-span-6 relative">
+                    <!-- Badge Boas-Vindas posicionado no fluxo acima da imagem para NUNCA encavalar nos rostos dos fundadores em smartphones -->
+                    <div class="inline-flex items-center gap-2 bg-white/95 backdrop-blur-md px-4 py-2 rounded-full border border-meb-gold/40 shadow-sm mb-4">
+                        <img src="MEB3_3.jpg" onerror="this.onerror=null; this.src='https://placehold.co/50x50/FDF7F4/D4AF37?text=MEB';" alt="Borboleta MEB" class="w-5 h-5 rounded-full">
+                        <span class="text-xs font-bold text-meb-goldDark uppercase tracking-wider">Boas-Vindas ao MEB</span>
+                    </div>
+
                     <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-meb-gold/40 group">
                         <img src="MEB1_2.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/800x600/FDF7F4/D4AF37?text=MEB+Fundadores';" alt="Fundadores do Salão MEB na Fachada" class="w-full h-auto object-cover group-hover:scale-102 transition duration-500">
-                        <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-4 py-2 rounded-full border border-meb-gold/40 flex items-center gap-2 shadow-sm">
-                            <img src="MEB3_3.jpg" onerror="this.onerror=null; this.src='https://placehold.co/50x50/FDF7F4/D4AF37?text=MEB';" alt="Borboleta MEB" class="w-5 h-5 rounded-full">
-                            <span class="text-xs font-bold text-meb-goldDark uppercase tracking-wider">Boas-Vindas ao MEB</span>
-                        </div>
                     </div>
+                    
                     <!-- Card de citação sobre a foto -->
                     <div class="mt-4 sm:mt-0 sm:absolute sm:-bottom-6 sm:-right-6 bg-meb-nude p-6 rounded-2xl shadow-gold-glow max-w-md border border-meb-gold/40">
                         <p class="font-serif italic text-sm text-meb-dark/90">
@@ -310,13 +317,13 @@
                 </p>
             </div>
 
-            <!-- Grid de Fotos do Espaço (4 Fotos Chave) -->
+            <!-- Grid de Fotos do Espaço -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <!-- Foto Espaço 1: MEB2_2.jpg (Lounge de Espera com Sofá) -->
+                <!-- Foto Espaço 1: MEB2_2_2.jpg (Lounge de Espera com Sofá) -->
                 <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-gold-glow transition duration-500 border border-meb-gold/30">
                     <div class="h-64 overflow-hidden relative">
-                        <img src="MEB2_2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80';" alt="Lounge de Espera Salão MEB" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <img src="MEB2_2_2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80';" alt="Lounge de Espera Salão MEB" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                         <span class="absolute top-3 left-3 bg-white/95 backdrop-blur-md text-[11px] font-bold px-3 py-1 rounded-full text-meb-dark border border-meb-gold/40">Lounge & Recepção</span>
                     </div>
                     <div class="p-5">
